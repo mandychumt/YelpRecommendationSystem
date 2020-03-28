@@ -43,7 +43,8 @@ Execution command: $ spark-submit similar_business_pairs.py <input_file> <output
 <output_file>: similar_business_pairs
 
 
------------------ Frequent Itemsets -----------------
+-------------------- Frequent Itemsets --------------------
+
 Used pyspark to implement SON and PCY algorithms to calculate the combinations of frequent businesses (as singletons, pairs, triples, etc.) that are qualified as frequent given a support threshold.
 
 Execution command: $ spark-submit Yelp_frequent_itemsets.py <filter threshold> <support> <input_file_path> <output_file_path>
