@@ -19,6 +19,8 @@ Predicting command: $ spark-submit CF_predict.py <train_file> <test_file> <model
 <output_file>: CF_item_based.predict, CF_user_based.predict
 
 
+
+
 -------------- Content-based Recommendation System --------------
 
 A content-based recommendation system is built by generating profiles from review texts for users and businesses in the train review set. Then, the system/model is used to predict if a user prefers to review a given business, i.e., computing the cosine similarity between the user and item profile vectors.
@@ -34,7 +36,9 @@ Predicting command: $ spark-submit content_based_predict.py <test_file> <model_f
 <output_file>: content_based.predict
 
 
------------------ Similar Business Pairs -----------------
+
+
+-------------------- Similar Business Pairs --------------------
 
 Min-Hash and Locality Sensitive Hashing algorithms are implemented with Jaccard similarity to find similar business pairs in the train_review file. This system focuses on the 0 or 1 ratings rather than the actual ratings/stars in the reviews. After finding candidate pairs, the system verifies the candidate pairs using their original Jaccard similarity and outputs business pairs whose Jaccard similarity is >= 0.05.
 
@@ -43,7 +47,9 @@ Execution command: $ spark-submit similar_business_pairs.py <input_file> <output
 <output_file>: similar_business_pairs
 
 
--------------------- Frequent Itemsets --------------------
+
+
+----------------------- Frequent Itemsets -----------------------
 
 Used pyspark to implement SON and PCY algorithms to calculate the combinations of frequent businesses (as singletons, pairs, triples, etc.) that are qualified as frequent given a support threshold.
 
